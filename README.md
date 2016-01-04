@@ -14,6 +14,9 @@ $ npm install --save choose-within-string
 
 ```js
 var chooseWithinString = require('choose-within-string')
+
+chooseWithinString('You just won $1/1,000/1,000,000! Now you are poor/happy/rich!', 2)
+// "You just won $1,000,000! Now you are rich!"
 ```
 
 ## License
