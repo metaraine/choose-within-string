@@ -46,6 +46,10 @@ describe('chooseWithinString', function () {
     chooseWithinString('one/two;', 0).should.equal('one;' )
   })
 
+  it('should replace underscores with spaces', function () {
+    chooseWithinString('Now you are poor/happy/a_millionaire!', 2).should.equal('Now you are a millionaire!')
+  })
+
   // it('should support alternative delimeters', function () {
   //   chooseWithinString('You have won $10-100-1,000!', 0, '-').should.equal('You have won $10!')
   // })

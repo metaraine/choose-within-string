@@ -9,12 +9,16 @@
 */
 var choicesRegex = /([^\/\s$]*[^\/\s.,;?!])\/([^\/\s$]*[^\/\s.,;?!])(?:\/([^\/\s$]*[^\/\s.,;?!]))*/g
 
-module.exports = (str, n) => {
+module.exports = (str, n, options) => {
+  options = options || {}
+  if(options.replaceUnderscores === undefined) {
+    options.replaceUnderscores = true
+  }
   return str.replace(choicesRegex, (match, ...rest)=> {
     var groups = rest.slice(0, rest.length-2)
     if(n >= groups.length) {
       throw new Error(`Cannot select option {n} from {groups.length} options ({groups}).`)
     }
-    return groups[n]
+    return options.replaceUnderscores ? groups[n].replace(/_/g, ' ') : groups[n]
   })
 }
