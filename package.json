@@ -1,6 +1,6 @@
 {
   "name": "choose-within-string",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Choose among several values separated by slashes within a string.",
   "license": "ISC",
   "repository": "https://github.com/metaraine/choose-within-string",
